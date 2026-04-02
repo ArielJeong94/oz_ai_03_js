@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="box">마우스를 올려보세요.</p>
+
+    <script>
+        // mouseover event 발생 시 글씨를 orange으로 변경
+        // mouseout event 발생 시 글씨를 black으로 변경
+
+        const box = document.querySelector("#box");
+
+        // 이벤트 리스너를 등록할 때, 함수 정의를 동시에 할 수 있다.
+        // 방법 1.
+        // box.addEventListener("mouseover", function () {
+        //     box.style.color = "orange";
+        // });
+        // box.addEventListener("mouseout", function () {
+        //     box.style.color = "black";
+        // });
+
+        // 방법 2.
+        // box.addEventListener("mouseover", () => {
+        //     box.style.color = "orange";
+        // });
+        // box.addEventListener("mouseout", () => {
+        //     box.style.color = "black";
+        // });
+
+        // 방법 3. 함수가 한줄일 때 가능
+        // box.addEventListener("mouseover", () => box.style.color = "orange");
+        // box.addEventListener("mouseout", () => box.style.color = "black");
+
+        // 방법 4. 색을 바꾸는 함수로 따로 뺌
+        function changeColor(color) {
+            box.style.color = color;
+        };
+        box.addEventListener("mouseover", () => changeColor("orange"));
+        box.addEventListener("mouseout", () => changeColor("black"));
+
+    </script>
+</body>
+
+</html>
